@@ -6,61 +6,97 @@
     <title>LGBTNews - Tin công nghệ mới nhất</title>
     <link rel="stylesheet" href="styleTrangchu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" type="image/png" href="LGBT.png">
 </head>
 <body>
 
+    <script src="loading.js"></script>
+
+        <!-- Màn hình loading -->
+        <div class="loading-screen">
+            <div class="brand-container">
+                <img style="align-items: center;" src="LGBT.png" class="logoloading" alt="Website Logo">
+                <h1 class="site-name">LGBT News</h1>
+            </div>
+            
+            <div class="cyber-spinner"></div>
+            <div class="loading-text">ĐANG KẾT NỐI HỆ THỐNG</div>
+        </div>
+
+<div class="anniversary-banner">
+    <img src="logo304.png" class="logo-left" alt="Logo trái">
+    <div class="banner-text" style="font-weight: 50px; font-size: 24px;">
+        Kỷ niệm 50 năm Giải phóng miền Nam
+    </div>
+    <img src="anh304.png" class="logo-right" alt="Logo phải">
+</div>
+
+
+<header class="header" style="margin-top: 60px;">
+    <div class="logo">
+        <img style="border-radius: 80px;" src="LGBT.png" alt="LGBT Logo">
+        <a href="Trangchu.html"><h1>LGBT Website</h1></a>
+    </div>
+
+    <div class="nav-info">
+        <div class="time-weather">
+            <div id="current-time"></div>
+            <div class="weather-info">
+                <span id="location"></span>
+                <span id="temperature"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menu desktop -->
+    <nav class="desktop-nav">
+        <ul style="font-size: 25px;">
+            <li><a href="Trangchu.html">Home</a></li>
+            <li><a href="AboutUs.html">About Us</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Menu mobile -->
+    <button class="menu-toggle" aria-label="Toggle menu">
+        <span class="hamburger"></span>
+    </button>
     
-
-	<header class="header">
-		<div class="logo">
-			<img style="border-radius: 80px;" src="LGBT.png" alt="LGBT Logo">
-			<h1>LGBT Website</h1>
-		</div>
-	
-		<!-- Menu desktop -->
-		<nav class="desktop-nav">
-			<ul style="font-size: 25px;">
-				<li><a href="Trangchu.html">Home</a></li>
-				<li><a href="#about">About Us</a></li>
-				<li><a href="#contact">Contact</a></li>
-			</ul>
-		</nav>
-	
-		<!-- Menu mobile -->
-		<button class="menu-toggle" aria-label="Toggle menu">
-			<span class="hamburger"></span>
-		</button>
-		
-		<nav class="mobile-nav">
-			<ul>
-				<li><a href="Trangchu.html">Home</a></li>
-				<li><a href="#about">About Us</a></li>
-				<li><a href="#contact">Contact</a></li>
-			</ul>
-		</nav>
-	</header>
+    <nav class="mobile-nav">
+        <ul>
+            <li><a href="Trangchu.html">Home</a></li>
+            <li><a href="AboutUs.html">About Us</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
 
 
+<main>
     <section class="hero" id="home">
         <div class="wrapper">
-            <div class="box">
-                <div></div><div></div><div></div><div></div><div></div>
-                <div></div><div></div><div></div><div></div><div></div>
-            </div>
+          <div class="box">
+            <div></div><div></div><div></div><div></div><div></div>
+            <div></div><div></div><div></div><div></div><div></div>
+          </div>
         </div>
         
         <div class="hero-content">
-            <h1 class="typing-animation">Hôm nay có gì mới</h1>
+            <h1  class="typing-animation">Hôm nay có gì mới</h1>
+            <div class="typewriter-container">
+                <h2 aria-label="Cập nhật tin tức">
+                  Chúng tôi luôn cập nhật những tin tức mới nhất về&nbsp;
+                  <span id="typewriter-text"></span>
+                </h2>              
             <a href="#articles" class="discover-btn">Khám phá</a>
         </div>
-    </section>
-
+      </section>
 
 <section class="articles" id="articles">
     <div class="article-grid">
         <article class="article-card">
-            <a href="LGBT-Website/blob/main/news/Trangbao1.html">
+            <a href="news/Trangbao1.html">
                 <div class="image-container">
                     <img src="https://cdnv2.tgdd.vn/mwg-static/common/News/1572326/4.jpg" alt="Trí tuệ nhân tạo">
                 </div>
@@ -73,66 +109,66 @@
         </article>
 
         <article class="article-card">
-            <a href="#">
+            <a href="news/Trangbao2.html">
                 <div class="image-container">
-                    <img src="https://picsum.photos/400/300?tech2" alt="Smartphone mới">
+                    <img src="https://funix.edu.vn/wp-content/uploads/2023/08/sinh-vien-cong-nghe-thong-tin-phai-hoc-kien-thuc-dai-cuong.jpg" alt="CNTT">
                 </div>
                 <div class="content">
-                    <h3>Flagship 2024 ra mắt</h3>
-                    <p class="author">Bởi Tech Reviewer</p>
-                    <p class="description">Cận cảnh smartphone với camera 200MP...</p>
+                    <h3>CÔNG NGHỆ THÔNG TIN: ĐỘNG LỰC CHUYỂN ĐỔI SỐ VÀ PHÁT TRIỂN KINH TẾ HIỆN ĐẠI</h3>
+                    <p class="author">Bởi Ngọc Hiền</p>
+                    <p class="description">Ông Quang cho biết, hiện nay, các doanh nghiệp Việt Nam đang tích cực...</p>
                 </div>
             </a>
         </article>
 
         <article class="article-card">
-            <a href="#">
+            <a href="news/Trangbao3.html">
                 <div class="image-container">
-                    <img src="https://picsum.photos/400/300?tech3" alt="Laptop gaming">
+                    <img src="https://robotsteam.vn/sites/default/files/anh_bai_viet/cach-mang-cong-nghiep-4-0.jpg" alt="Cong Nghe 4.0">
                 </div>
                 <div class="content">
-                    <h3>Laptop Gaming đỉnh cao</h3>
-                    <p class="author">Bởi Gaming Master</p>
-                    <p class="description">Trải nghiệm laptop gaming cấu hình khủng...</p>
+                    <h3>Công Nghệ Số 4.0: Xu Hướng, Ứng Dụng và Lợi Ích Thực Tiễn Cho Cuộc Sống</h3>
+                    <p class="author">Bởi Hong Nhu Meo Meo</p>
+                    <p class="description">Thế giới số internet hiện nay đang phát triển với tốc độ chóng mặt, mang lại...</p>
                 </div>
             </a>
         </article>
 
         <article class="article-card">
-            <a href="#">
+            <a href="news/Trangbao4.html">
                 <div class="image-container">
-                    <img src="https://picsum.photos/400/300?tech4" alt="Blockchain">
+                    <img src="https://vcdn1-sohoa.vnecdn.net/2025/04/01/65fe9d31c141e19c5f106fa8-Gen-2-2952-2085-1743482615.png?w=460&h=0&q=100&dpr=2&fit=crop&s=yEd1Q0-dIF02tS26dJ0UUA" alt="GenZ">
                 </div>
                 <div class="content">
-                    <h3>Công nghệ Blockchain 3.0</h3>
-                    <p class="author">Bởi Crypto Expert</p>
-                    <p class="description">Xu hướng blockchain mới nhất...</p>
+                    <h3>Sự bấp bênh của Gen Z Mỹ trong hành trình tìm việc làm công nghệ</h3>
+                    <p class="author">Bởi Ngô Gia Minh</p>
+                    <p class="description">Ryan Kim, một sinh viên đại học tại Mỹ, là một trong những người điển hình cho sự ...</p>
                 </div>
             </a>
         </article>
 
         <article class="article-card">
-            <a href="#">
+            <a href="news/Trangbao5.html">
                 <div class="image-container">
-                    <img src="https://picsum.photos/400/300?tech5" alt="Robot">
+                    <img src="https://naue.edu.vn/Images/userfiles/Thumbs/2023-5/nhung-ky-nang-can-thiet-doi-voi-sinh-vien-8-5-23-22-30.png" alt="Ky-nag-song">
                 </div>
                 <div class="content">
-                    <h3>Robot gia đình thế hệ mới</h3>
-                    <p class="author">Bởi Future Tech</p>
-                    <p class="description">Robot AI có khả năng nấu ăn...</p>
+                    <h3>Những kỹ năng cần thiết của sinh viên thời đại 4.0</h3>
+                    <p class="author">Bởi Linh Đan</p>
+                    <p class="description">Cuộc cách mạng 4.0 đồng hành cùng Thế hệ Z và Thế hệ Alpha trong quá trình...</p>
                 </div>
             </a>
         </article>
 
         <article class="article-card">
-            <a href="#">
+            <a href="news/Trangbao6.html">
                 <div class="image-container">
-                    <img src="https://picsum.photos/400/300?tech6" alt="Vũ trụ ảo">
+                    <img src="https://funix.edu.vn/wp-content/uploads/2023/06/funix-ung-dung-nhan-tin-signal-la-gi-2.jpg" alt="signal img">
                 </div>
                 <div class="content">
-                    <h3>Metaverse 2.0</h3>
-                    <p class="author">Bởi VR Master</p>
-                    <p class="description">Thế giới ảo với công nghệ neuralink...</p>
+                    <h3>Signal: Ứng Dụng Nhắn Tin Bảo Mật Hàng Đầu Đặt Quyền Riêng Tư Lên Trên Hết</h3>
+                    <p class="author">Bởi Như Hảo</p>
+                    <p class="description">Trong thời đại mà thông tin cá nhân dễ dàng bị thu thập, lưu trữ và khai thác vì nhiều mục đích khác nhau, sự xuất hiện của...</p>
                 </div>
             </a>
         </article>
@@ -160,18 +196,87 @@
             </div>
         </div>
     </footer>
-
-    
+</main>
 
 <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
+
+
+function smoothScroll(target, duration) {
+    const targetElement = document.querySelector(target);
+    const targetPosition = targetElement.getBoundingClientRect().top;
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - 100;
+    let startTime = null;
+
+    function animation(currentTime) {
+        if (!startTime) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+    }
+
+    function easeInOutQuad(t, b, c, d) {
+        t /= d/2;
+        if (t < 1) return c/2*t*t + b;
+        t--;
+        return -c/2 * (t*(t-2) - 1) + b;
+    }
+
+    requestAnimationFrame(animation);
+}
+
+document.querySelector('.discover-btn').addEventListener('click', function(e) {
+    e.preventDefault();
+    smoothScroll('#articles', 1500);
+});
+
+const phrases = [
+    "công nghệ", 
+    "kinh tế", 
+    "xã hội", 
+    "văn hóa", 
+    "giải trí", 
+    "các xu hướng đột phá toàn cầu"
+  ];
+
+  const typewriterElement = document.getElementById("typewriter-text");
+  let phraseIndex = 0;
+  let letterIndex = 0;
+  let isDeleting = false;
+  const typingSpeed = 100;  // Tốc độ gõ (ms)
+  const pauseBetween = 2000; // Thời gian dừng sau khi gõ xong câu (ms)
+
+  function type() {
+    const currentPhrase = phrases[phraseIndex];
+    
+    if (!isDeleting) {
+      // Gõ thêm một chữ
+      typewriterElement.textContent = currentPhrase.substring(0, letterIndex + 1);
+      letterIndex++;
+      // Nếu đã gõ xong toàn bộ câu, chờ rồi bắt đầu xóa
+      if (letterIndex === currentPhrase.length) {
+        setTimeout(() => { 
+          isDeleting = true;
+          type();
+        }, pauseBetween);
+        return;
+      }
+    } else {
+      // Xóa dần từng chữ
+      typewriterElement.textContent = currentPhrase.substring(0, letterIndex - 1);
+      letterIndex--;
+      if (letterIndex === 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+      }
+    }
+    // Điều chỉnh tốc độ (tốc độ xóa nhanh hơn gõ)
+    const currentSpeed = isDeleting ? typingSpeed / 2 : typingSpeed;
+    setTimeout(type, currentSpeed);
+  }
+
+  document.addEventListener("DOMContentLoaded", type);
 
 
 
@@ -197,6 +302,58 @@ document.querySelectorAll('.mobile-nav a').forEach(link => {
         hamburger.classList.remove('active');
     });
 });
+
+function updateDateTime() {
+    const now = new Date();
+    const options = { 
+        hour: '2-digit', 
+        minute: '2-digit',
+        hour12: false 
+    };
+    
+    document.getElementById('current-time').textContent = now.toLocaleTimeString('vi-VN', options);
+}
+
+async function getWeather(coords) {
+    try {
+        const response = await fetch(
+            `https://api.openweathermap.org/data/2.5/weather?lat=${coords.latitude}&lon=${coords.longitude}&appid=${c65dc3d2c9d9d8e18f9ec9a124c502f7}&units=metric&lang=vi`
+        );
+        const data = await response.json();
+        
+        document.getElementById('location').textContent = data.name;
+        document.getElementById('temperature').textContent = `${Math.round(data.main.temp)}°C`;
+    } catch (error) {
+        console.error('Lỗi tải thời tiết:', error);
+        document.getElementById('temperature').textContent = '--°C';
+    }
+}
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            position => {
+                getWeather(position.coords);
+            },
+            error => {
+                console.error('Lỗi định vị:', error);
+                document.getElementById('location').textContent = 'Vị trí ẩn';
+                document.getElementById('temperature').textContent = '--°C';
+            },
+            {
+                enableHighAccuracy: true,
+                timeout: 5000,
+                maximumAge: 0
+            }
+        );
+    } else {
+        document.getElementById('location').textContent = 'Không hỗ trợ định vị';
+    }
+}
+
+updateDateTime();
+setInterval(updateDateTime, 1000);
+getLocation();
 
     </script>
 </body>
