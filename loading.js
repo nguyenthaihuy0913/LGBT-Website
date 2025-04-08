@@ -1,5 +1,5 @@
         // Thời gian tối thiểu hiển thị loading screen
-        const minLoadingTime = 1300; 
+        const minLoadingTime = 450; 
         const loadingStartTime = Date.now();
 
         function hideLoadingScreen() {
