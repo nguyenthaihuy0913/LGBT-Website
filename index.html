@@ -1,202 +1,692 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
-    <meta name='dmca-site-verification' content='OWpLS3lYU09rVXVzT1ZBU3ppVloxQXZtaE45MmExWW41dENZQm1aTTBZVT01' />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LGBTNews - Tin công nghệ mới nhất</title>
-    <link rel="stylesheet" href="styleTrangchu.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="icon" type="image/png" href="LGBT.png">
+    <title>Ngày Giải Phóng 30/4/1975 - Góc Nhìn Bên</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: #c4d7e0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+        
+        .loading-text {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 24px;
+            color: #333;
+            z-index: 10;
+        }
+        
+        .progress-bar {
+            position: absolute;
+            bottom: 20px;
+            left: 10%;
+            width: 80%;
+            height: 5px;
+            background-color: #888;
+            border-radius: 5px;
+            overflow: hidden;
+            z-index: 10;
+        }
+        
+        .progress {
+            width: 0%;
+            height: 100%;
+            background-color: #c52121;
+            border-radius: 5px;
+            animation: fillProgress 8s linear forwards;
+        }
+        
+        .date-display {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #c52121;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+            z-index: 10;
+        }
+        
+        .ground {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: linear-gradient(to bottom, #8a7054, #695540);
+            z-index: 1;
+        }
+        
+        .pavement {
+            position: absolute;
+            bottom: 80px;
+            left: 0;
+            width: 100%;
+            height: 30px;
+            background: #a59c8e;
+            z-index: 1;
+        }
+        
+        .tank {
+            position: absolute;
+            bottom: 110px;
+            left: -250px;
+            width: 250px;
+            height: 60px; 
+            z-index: 2; 
+            animation: moveTank 8s linear forwards;
+        }
+        
+        .tank-body {
+            position: absolute;
+            bottom: 25px; 
+            width: 200px;
+            height: 35px;
+            background: linear-gradient(145deg, #475c38, #2c3c1c);
+            border-radius: 2px 2px 0 10px;
+            border: 2px solid #222;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .tank-turret {
+            position: absolute;
+            bottom: 60px; 
+            left: 60px;
+            width: 100px;
+            height: 25px;
+            background: linear-gradient(145deg, #475c38, #2c3c1c);
+            border-radius: 50% / 20%;
+            border: 2px solid #222;
+            z-index: 4;
+        }
+        
+        .tank-number {
+            position: absolute;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            top: 5px;
+            left: 15px;
+            z-index: 5;
+        }
+        
+        .tank-logo {
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            background: linear-gradient(to bottom, red 50%, blue 50%);
+            border-radius: 50%;
+            top: 0;
+            left: 70px;
+            border: 1px solid #fff;
+            overflow: hidden;
+        }
+        
+        .logo-star {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #ffde00;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        }
+        
+        .tank-barrel {
+            position: absolute;
+            top: 10px;
+            left: 100px;
+            width: 140px;
+            height: 8px;
+            background: #333;
+            border-radius: 4px;
+            z-index: 3;
+        }
+        
+        .tank-hatch {
+            position: absolute;
+            top: -10px;
+            left: 40px;
+            width: 15px;
+            height: 10px;
+            background: #222;
+            border-radius: 5px 5px 0 0;
+            border: 1px solid #333;
+        }
+        
+        .tank-tracks {
+            position: absolute;
+            bottom: 0; 
+            left: 0;
+            width: 220px;
+            height: 25px;
+            background: #222;
+            border-radius: 15px 8px 8px 15px;
+            overflow: hidden;
+        }
+        
+        .track-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(90deg, #333, #333 5px, #222 5px, #222 10px);
+            animation: moveTrack 0.3s linear infinite;
+        }
+        
+        .track-wheels {
+            position: absolute;
+            bottom: 2px;
+            left: 10px;
+            width: 200px;
+            height: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .wheel {
+            width: 20px;
+            height: 20px;
+            background: #444;
+            border-radius: 50%;
+            box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.5);
+            border: 1px solid #111;
+            animation: rotateWheel 0.5s linear infinite;
+        }
+        
+        .wheel::after {
+            content: '';
+            position: absolute;
+            top: 9px;
+            left: 4px;
+            width: 12px;
+            height: 2px;
+            background: #222;
+            border-radius: 1px;
+        }
+        
+        .tank-details {
+            position: absolute;
+            top: 3px;
+            right: 30px;
+            width: 20px;
+            height: 10px;
+            background: #2c3c1c;
+            border-radius: 2px;
+            border: 1px solid #222;
+        }
+        
+        .tank-details2 {
+            position: absolute;
+            top: -10px;
+            right: 15px;
+            width: 15px;
+            height: 10px;
+            background: #2c3c1c;
+            border-radius: 2px;
+            border: 1px solid #222;
+        }
+        
+        .tank-exhaust {
+            position: absolute;
+            top: -5px;
+            right: 5px;
+            width: 10px;
+            height: 5px;
+            background: #333;
+            border-radius: 1px;
+        }
+        
+        .exhaust-smoke {
+            position: absolute;
+            top: -15px;
+            right: 2px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: rgba(150, 150, 150, 0.8);
+            animation: exhaustSmoke 0.8s infinite;
+        }
+        
+        @keyframes exhaustSmoke {
+            0% {
+                opacity: 0.8;
+                transform: scale(0.5);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(2) translateY(-15px) translateX(10px);
+            }
+        }
+        
+        @keyframes moveTrack {
+            from { background-position-x: 0; }
+            to { background-position-x: 20px; }
+        }
+        
+        @keyframes rotateWheel {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .palace-gate {
+            position: absolute;
+            bottom: 110px;
+            left: 50%;
+            width: 40px; 
+            height: 250px;
+            z-index: 3; 
+        }
+        
+        .gate-column {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 250px;
+            background: #777;
+            border: 1px solid #444;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+        }
+        
+        .gate-door {
+    position: absolute;
+    bottom: 0;
+    left: 38px;
+    width: 150px;
+    height: 220px;
+    background: #444;
+    border: 2px solid #333;
+    transform-origin: left bottom; 
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    display: none;
+}
+
+.gate-crash .gate-door {
+    transform: rotate(-90deg) translateY(50px); 
+    opacity: 0.8;
+}
+        
+        .gate-bars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(90deg, transparent, transparent 15px, #666 16px, #666 19px);
+        }
+        
+        .gate-cross-bars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(to bottom, transparent, transparent 40px, #666 41px, #666 44px);
+        }
+        
+        .gate-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 40px;
+            height: 30px;
+            background: #555;
+            border: 1px solid #444;
+            border-radius: 5px 5px 0 0;
+        }
+        
+        .gate-ornament {
+            position: absolute;
+            top: -15px;
+            left: 15px;
+            width: 10px;
+            height: 15px;
+            background: #666;
+            border-radius: 5px 5px 0 0;
+        }
+        
+        .gate-hinges {
+            position: absolute;
+            width: 8px;
+            height: 16px;
+            background: #222;
+            border-radius: 4px;
+            z-index: 4;
+            left: 0;
+        }
+        
+        .hinge1 { top: 60px; }
+        .hinge2 { top: 120px; }
+        .hinge3 { top: 180px; }
+        
+        .dust-cloud {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            bottom: 110px;
+            left: 50%;
+            opacity: 0;
+            z-index: 4;
+        }
+        
+        .dust {
+            position: absolute;
+            background: rgba(200, 190, 170, 0.8);
+            border-radius: 50%;
+        }
+        
+        .dust1 {
+            width: 80px;
+            height: 70px;
+            bottom: 20px;
+            left: 0;
+        }
+        
+        .dust2 {
+            width: 100px;
+            height: 80px;
+            bottom: 40px;
+            left: 60px;
+        }
+        
+        .dust3 {
+            width: 70px;
+            height: 60px;
+            bottom: 80px;
+            left: 40px;
+        }
+        
+        .dust4 {
+            width: 50px;
+            height: 50px;
+            bottom: 10px;
+            left: 100px;
+        }
+        
+        .debris {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #444;
+            border-radius: 2px;
+            bottom: 110px;
+            left: 50%;
+            opacity: 0;
+            z-index: 5;
+        }
+        
+        @keyframes moveTank {
+            0% {
+                left: -250px;
+            }
+            40% {
+                left: calc(50% - 270px);
+            }
+            45% {
+                left: calc(50% - 240px);
+            }
+            100% {
+                left: 100vw;
+            }
+        }
+        
+        @keyframes fillProgress {
+            0% {
+                width: 0%;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+        
+        .history-info {
+    position: absolute;
+    top: 160px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+    /* Gradient đỏ – xanh dương */
+    background: linear-gradient(to bottom, #ff0000 50%, #0000ff 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* Animation xuất hiện */
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out forwards;
+    z-index: 10;
+}
+
+/* Keyframes cho hiệu ứng xuất hiện */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+        
+        .sky {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60%;
+            background: linear-gradient(to bottom, #a7d2e5, #c6e4f2);
+            z-index: 0;
+        }
+        
+        .trees {
+            position: absolute;
+            bottom: 110px;
+            width: 100%;
+            height: 200px;
+            z-index: 1;
+        }
+        
+        .tree {
+            position: absolute;
+            bottom: 0;
+            width: 120px;
+            height: 200px;
+        }
+        
+        .tree1 { left: 10%; }
+        .tree2 { left: 25%; }
+        .tree3 { left: 65%; }
+        .tree4 { left: 85%; }
+        
+        .trunk {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 15px;
+            height: 80px;
+            background: #75513a;
+            z-index: 1;
+        }
+        
+        .foliage {
+            position: absolute;
+            bottom: 60px;
+            left: 0;
+            width: 120px;
+            height: 140px;
+            background: #305030;
+            border-radius: 60px 60px 60px 60px;
+            z-index: 1;
+        }
+    </style>
 </head>
+
 <body>
-
-    <script src="loading.js"></script>
-
-        <div class="loading-screen">
-            <div class="brand-container">
-                <img style="align-items: center;" src="LGBT.png" class="logoloading" alt="Website Logo">
-                <h1 class="site-name">LGBT News</h1>
+    <div class="container">
+        <div class="sky"></div>
+        
+        <div class="trees">
+            <div class="tree tree1">
+                <div class="trunk"></div>
+                <div class="foliage"></div>
             </div>
-            
-            <div class="cyber-spinner"></div>
-            <div class="loading-text">ĐANG KẾT NỐI HỆ THỐNG</div>
-        </div>
-
-<div class="anniversary-banner">
-    <img src="logo304.png" class="logo-left" alt="Logo trái">
-    <div class="banner-text" style="font-weight: 50px; font-size: 24px;">
-        Kỷ niệm 50 năm Giải phóng miền Nam
-    </div>
-    <img src="anh304.png" class="logo-right" alt="Logo phải">
-</div>
-
-
-<header class="header" style="margin-top: 60px;">
-    <div class="logo">
-        <img style="border-radius: 80px;" src="LGBT.png" alt="LGBT Logo">
-        <a href="Trangchu.html"><h1>LGBT Website</h1></a>
-    </div>
-
-    <div class="nav-info">
-        <div class="time-weather">
-            <div id="current-time"></div>
-            <div class="weather-info">
-                <span id="location"></span>
-                <span id="temperature"></span>
+            <div class="tree tree2">
+                <div class="trunk"></div>
+                <div class="foliage"></div>
             </div>
-        </div>
-    </div>
-
-    <nav class="desktop-nav">
-        <ul style="font-size: 25px;">
-            <li><a href="Trangchu.html">Home</a></li>
-            <li><a href="AboutUs.html">About Us</a></li>
-            <li><a href="Contact.html">Contact</a></li>
-        </ul>
-    </nav>
-
-    <button class="menu-toggle" aria-label="Toggle menu">
-        <span class="hamburger"></span>
-    </button>
-</header>
-
-<nav class="mobile-nav">
-    <ul>
-        <li><a href="Trangchu.html">Home</a></li>
-        <li><a href="AboutUs.html">About Us</a></li>
-        <li><a href="Contact.html">Contact</a></li>
-    </ul>
-</nav>
-
-
-<main>
-    <section class="hero" id="home">
-        <div class="wrapper">
-          <div class="box">
-            <div></div><div></div><div></div><div></div><div></div>
-            <div></div><div></div><div></div><div></div><div></div>
-          </div>
+            <div class="tree tree3">
+                <div class="trunk"></div>
+                <div class="foliage"></div>
+            </div>
+            <div class="tree tree4">
+                <div class="trunk"></div>
+                <div class="foliage"></div>
+            </div>
         </div>
         
-        <div class="hero-content">
-            <h1  class="typing-animation">Hôm nay có gì mới</h1>
-            <div class="typewriter-container">
-                <h2 aria-label="Cập nhật tin tức">
-                  Chúng tôi luôn cập nhật những tin tức mới nhất về&nbsp;
-                  <span id="typewriter-text"></span>
-                </h2>              
-            <a href="#articles" class="discover-btn">Khám phá</a>
+        <div class="date-display">30.04.1975 - 30.04.2025</div>
+        <div class="history-info">Kỷ niệm 50 năm Ngày Giải phóng miền Nam, thống nhất đất nước</div>
+        
+        <div class="tank">
+            <div class="tank-body">
+                <div class="tank-hatch"></div>
+                <div class="tank-details"></div>
+                <div class="tank-details2"></div>
+                <div class="tank-exhaust">
+                    <div class="exhaust-smoke"></div>
+                    <div class="exhaust-smoke" style="animation-delay: 0.3s;"></div>
+                    <div class="exhaust-smoke" style="animation-delay: 0.6s;"></div>
+                </div>
+            </div>
+            <div class="tank-turret">
+                <div class="tank-number">843</div>
+                <div class="tank-logo">
+                    <div class="logo-star"></div>
+                </div>
+                <div class="tank-barrel"></div>
+            </div>
+            <div class="tank-tracks">
+                <div class="track-pattern"></div>
+                <div class="track-wheels">
+                    <div class="wheel"></div>
+                    <div class="wheel"></div>
+                    <div class="wheel"></div>
+                    <div class="wheel"></div>
+                    <div class="wheel"></div>
+                </div>
+            </div>
         </div>
-      </section>
-
-<section class="articles" id="articles">
-    <div class="article-grid">
-        <article class="article-card">
-            <a href="news/Trangbao1.html">
-                <div class="image-container">
-                    <img src="https://cdnv2.tgdd.vn/mwg-static/common/News/1572326/4.jpg" alt="Trí tuệ nhân tạo">
-                </div>
-                <div class="content">
-                    <h3>TRÍ TUỆ NHÂN TẠO: CUỘC CÁCH MẠNG CÔNG NGHỆ ĐỊNH HÌNH TƯƠNG LAI</h3>
-                    <p class="author">Bởi Thanh Hằng</p>
-                    <p class="description">Chỉ vài thập kỷ trước, trí tuệ nhân tạo (AI) vẫn còn là một khái niệm xa vời...</p>
-                </div>
-            </a>
-        </article>
-
-        <article class="article-card">
-            <a href="news/Trangbao2.html">
-                <div class="image-container">
-                    <img src="https://funix.edu.vn/wp-content/uploads/2023/08/sinh-vien-cong-nghe-thong-tin-phai-hoc-kien-thuc-dai-cuong.jpg" alt="CNTT">
-                </div>
-                <div class="content">
-                    <h3>CÔNG NGHỆ THÔNG TIN: ĐỘNG LỰC CHUYỂN ĐỔI SỐ VÀ PHÁT TRIỂN KINH TẾ HIỆN ĐẠI</h3>
-                    <p class="author">Bởi Ngọc Hiền</p>
-                    <p class="description">Ông Quang cho biết, hiện nay, các doanh nghiệp Việt Nam đang tích cực...</p>
-                </div>
-            </a>
-        </article>
-
-        <article class="article-card">
-            <a href="news/Trangbao3.html">
-                <div class="image-container">
-                    <img src="https://robotsteam.vn/sites/default/files/anh_bai_viet/cach-mang-cong-nghiep-4-0.jpg" alt="Cong Nghe 4.0">
-                </div>
-                <div class="content">
-                    <h3>Công Nghệ Số 4.0: Xu Hướng, Ứng Dụng và Lợi Ích Thực Tiễn Cho Cuộc Sống</h3>
-                    <p class="author">Bởi Hong Nhu Meo Meo</p>
-                    <p class="description">Thế giới số internet hiện nay đang phát triển với tốc độ chóng mặt, mang lại...</p>
-                </div>
-            </a>
-        </article>
-
-        <article class="article-card">
-            <a href="news/Trangbao4.html">
-                <div class="image-container">
-                    <img src="https://vcdn1-sohoa.vnecdn.net/2025/04/01/65fe9d31c141e19c5f106fa8-Gen-2-2952-2085-1743482615.png?w=460&h=0&q=100&dpr=2&fit=crop&s=yEd1Q0-dIF02tS26dJ0UUA" alt="GenZ">
-                </div>
-                <div class="content">
-                    <h3>Sự bấp bênh của Gen Z Mỹ trong hành trình tìm việc làm công nghệ</h3>
-                    <p class="author">Bởi Ngô Gia Minh</p>
-                    <p class="description">Ryan Kim, một sinh viên đại học tại Mỹ, là một trong những người điển hình cho sự ...</p>
-                </div>
-            </a>
-        </article>
-
-        <article class="article-card">
-            <a href="news/Trangbao5.html">
-                <div class="image-container">
-                    <img src="https://congdankhuyenhoc.qltns.mediacdn.vn/449484899827462144/2022/11/18/img0010-2-1668756156364433168339.jpeg" alt="Ky-nag-song">
-                </div>
-                <div class="content">
-                    <h3>Sứ mệnh của thanh niên trong thời đại số</h3>
-                    <p class="author">Bởi Linh Đan</p>
-                    <p class="description">Thanh niên, chiếm khoảng 20% dân số Việt Nam, là nguồn lực chính để xây dựng</p>
-                </div>
-            </a>
-        </article>
-
-        <article class="article-card">
-            <a href="news/Trangbao6.html">
-                <div class="image-container">
-                    <img src="https://funix.edu.vn/wp-content/uploads/2023/06/funix-ung-dung-nhan-tin-signal-la-gi-2.jpg" alt="signal img">
-                </div>
-                <div class="content">
-                    <h3>Signal: Ứng Dụng Nhắn Tin Bảo Mật Hàng Đầu Đặt Quyền Riêng Tư Lên Trên Hết</h3>
-                    <p class="author">Bởi Như Hảo</p>
-                    <p class="description">Trong thời đại mà thông tin cá nhân dễ dàng bị thu thập, lưu trữ và khai thác vì nhiều mục đích khác nhau, sự xuất hiện của...</p>
-                </div>
-            </a>
-        </article>
+        
+        <div class="palace-gate">
+            <div class="gate-column">
+                <div class="gate-top"></div>
+                <div class="gate-ornament"></div>
+                <div class="gate-hinges hinge1"></div>
+                <div class="gate-hinges hinge2"></div>
+                <div class="gate-hinges hinge3"></div>
+            </div>
+            
+            <div class="gate-door">
+                <div class="gate-bars"></div>
+                <div class="gate-cross-bars"></div>
+            </div>
+        </div>
+        
+        <div class="dust-cloud">
+            <div class="dust dust1"></div>
+            <div class="dust dust2"></div>
+            <div class="dust dust3"></div>
+            <div class="dust dust4"></div>
+        </div>
+        
+        <div class="debris debris1"></div>
+        <div class="debris debris2"></div>
+        <div class="debris debris3"></div>
+        <div class="debris debris4"></div>
+        <div class="debris debris5"></div>
+        
+        <div class="pavement"></div>
+        <div class="ground"></div>
+        
+        <div class="loading-text">Đang tải...</div>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
     </div>
-</section>
+    
+    <script>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="copyright">
-                <p>&copy;2024 LGBTNews</p>
-                <p>Bản quyền thuộc về nhóm LGBT</p>
-                <a href="//www.dmca.com/Protection/Status.aspx?ID=cdefa1a2-5c28-465b-8a82-bb5590cb8dce" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca-badge-w250-5x1-10.png?ID=cdefa1a2-5c28-465b-8a82-bb5590cb8dce"  alt="DMCA.com Protection Status" /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
-            </div>
-            <div class="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.7405518296932!2d106.69605261129598!3d10.831156158135872!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528f539a13887%3A0x96cc9bf37fa7bb2!2zVHLGsOG7nW5nIFRIUFQgVHLhuqduIFbEg24gR2nDoHU!5e0!3m2!1svi!2s!4v1743788866390!5m2!1svi!2s" width="600" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="border:0;"></iframe>
-            </div>
-            <div class="contact">
-                <h4>Liên hệ</h4>
-                <p><i class="fas fa-envelope"></i> thaihuyxbox@gmai.com</p>
-                <p><i class="fas fa-phone"></i> +84 858 835 036</p>
-                <div class="social-icons" >
-                    <a href="https://www.facebook.com/huysimphutao/"><i class="fab fa-facebook"></i></a>
-                    <a href="https://www.instagram.com/thaihuy.th.1207/"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.youtube.com/@thaihuy1207"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
-</main>
+        setTimeout(() => {
+            window.location.href = "Trangchu.html";
+        }, 10000);
 
-<script src="allscripts.js"></script>
-
+        document.addEventListener('DOMContentLoaded', function() {
+            const styleSheet = document.styleSheets[0];
+            
+            styleSheet.insertRule(`
+                @keyframes expandDust {
+                    0% { opacity: 0.9; transform: scale(0.3); }
+                    100% { opacity: 0; transform: scale(1.8); }
+                }
+            `, styleSheet.cssRules.length);
+        
+            const tank = document.querySelector('.tank');
+            const gateDoor = document.querySelector('.gate-door');
+            const dustCloud = document.querySelector('.dust-cloud');
+            const debris = document.querySelectorAll('.debris');
+            
+            setTimeout(() => {
+                gateDoor.style.display = 'block';
+                
+                setTimeout(() => {
+                    gateDoor.style.transition = 'transform 0.7s ease-out';
+                    gateDoor.style.transform = 'rotate(90deg)'; // Đổ cổng sang bên phải
+                    
+                    dustCloud.style.opacity = '0.8';
+                    dustCloud.style.transition = 'opacity 0.2s ease-in';
+                    
+                    document.querySelectorAll('.dust').forEach((dust, index) => {
+                        dust.style.animation = `expandDust ${1 + index * 0.2}s forwards`;
+                    });
+                    
+                    debris.forEach((particle, index) => {
+                        particle.style.opacity = '1';
+                        particle.style.transition = 'all 1s ease-out';
+                        
+                        const randomX = 50 + (Math.random() * 150) - 75;
+                        const randomY = (Math.random() * 100) - 50;
+                        const randomRotation = (Math.random() * 360);
+                        
+                        particle.style.transform = `translate(${randomX}px, ${randomY}px) rotate(${randomRotation}deg)`;
+                    });
+            
+                    setTimeout(() => {
+                        dustCloud.style.opacity = '0';
+                        dustCloud.style.transition = 'opacity 1.5s ease-out';
+                        
+                        gateDoor.style.transform = 'rotate(90deg) translateY(80px)';
+                    }, 500);
+                }, 100);
+            }, 3500);
+        });
+    </script>
 </body>
+
 </html>
